@@ -1,0 +1,83 @@
+{% extends 'TicTacToe/layout.html' %}
+
+{% block content %}
+<div class="home">
+    <form action="{% url 'play' %}">
+        <h1>Choose how do you want play: </h1>
+        <div></div>
+        <select name="choose" id="choose">
+            <option value="Random" class="option">Random</option>
+            <option value="X" class="option">X</option>
+            <option value="O" class="option">O</option>
+        </select>
+        <button>Play</button>
+        <div></div>
+        <h1>I personally think random is fairer</h1>
+        <div class="machine"></div>
+    </form>
+</div>
+<style>
+    *{
+        font-family: 'Indie Flower', cursive;
+    }
+    body {
+        background-color: #212121;
+    }
+    .home {
+        padding: 20em;
+        height: 100px;
+        color: #fff;
+    }
+    .home button{
+        width: 5em;
+        height: 2em;
+        font-size: 2em;
+        background: transparent;
+        color: #fff;
+        border-color: transparent;
+    }
+    #choose {
+        background: transparent;
+        color: #fff;
+        border: transparent;
+        font-size: 2em;
+        width: 5em;
+        height: 3em;
+    }
+    .option{
+        background: #212121;
+    }
+    .home h1{
+        margin-right: 2em;
+        text-align: center;
+        box-sizing: border-box;
+        display: inline-block;
+    }
+    .home form{
+        text-align: center;
+    }
+    .machine {
+        background-image: url(https://cdn.openai.com/labs/images/A%20photo%20of%20a%20silhouette%20of%20a%20person%20in%20a%20color%20lit%20desert%20at%20night.webp?v=1);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        border-radius: 50%;
+        animation: 1s movement infinite alternate linear;
+    }
+    @keyframes movement {
+        0%{
+            margin-top: -1.5em;
+        }
+        50%{
+            margin-top: -1em;
+        }
+        100%{
+            margin-top: -.5em;
+        }
+    }
+</style>
+{% endblock %}

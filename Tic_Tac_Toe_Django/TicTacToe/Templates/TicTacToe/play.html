@@ -1,0 +1,119 @@
+{% extends 'TicTacToe/layout.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>That's ok then you gonna play with:</h1>
+    <h2 class="player">{{player}}</h2>
+    <div class="space"></div>
+    <div>
+        <button class="box" value="1"></button>
+        <button class="box" value="2"></button>
+        <button class="box" value="3"></button>
+    </div>
+
+    <div>
+        <button class="box" value="4"></button>
+        <button class="box" value="5"></button>
+        <button class="box" value="6"></button>
+    </div>
+
+    <div>
+        <button class="box" value="7"></button>
+        <button class="box" value="8"></button>
+        <button class="box" value="9"></button>
+    </div>
+</div>
+
+<div class="machine"></div>
+<div class="text_1">
+    <h1>Hi, it's nice to meet you, my name is Artemis, I'm the artificial intelligence created by Gus Gus, 
+        I hope you're feeling great today, I'm capable of thinking very quickly, even so, if at any time I'm stunned, reload the page, 
+        I'm In the learning process, it will still be a pleasure to play with you.<span></span></h1>
+</div>
+<div class="text_2">
+    <h1>Artemis</h1>
+</div>
+<style>
+    *{
+        font-family: 'Indie Flower', cursive;
+    }
+    body{
+        background: #212121;
+    }
+    .space{
+        height: 7vh;
+    }
+    .container{
+        height: 90vh;
+        text-align: center;
+        color: #fff;
+    }
+    .container h2{
+        font-size: 5em;
+    }
+    .box{
+        background: transparent;
+        border: #fff;
+        border-width: 2px 2px 2px 2px;
+        border-radius: 50%;
+        border-style: solid;
+        color: #fff;
+        font-size: 5em;
+        width: 100px;
+        height: 100px;
+    }
+    .machine {
+        background-image: url(https://cdn.openai.com/labs/images/A%20photo%20of%20a%20silhouette%20of%20a%20person%20in%20a%20color%20lit%20desert%20at%20night.webp?v=1);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        left: 75vw;
+        top: 24vh;
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        border-radius: 50%;
+        animation: 1s movement infinite alternate linear;
+    }
+    @keyframes movement {
+        0%{
+            margin-top: -1.5em;
+        }
+        50%{
+            margin-top: -1em;
+        }
+        100%{
+            margin-top: -.5em;
+        }
+    }
+    .text_1 {
+        display: table;
+        width: 30vw;
+        height: 40vh;
+        position: absolute;
+        left: 65vw;
+        top: 35vh;
+    }
+    .text_1 h1{
+        float: left;
+        color: #fff;
+        position: relative;
+    }
+    .text_1 span{
+        position: absolute;
+        right: 0;
+        width: 0;
+        background: #212121;
+        border-left: 1px solid #fff;
+    }
+    .text_2 {
+        color: #fff;
+        width: 5vw;
+        height: 5vh;
+        position: absolute;
+        left: 65vw;
+        top: 22vh;
+    }
+</style>
+{% endblock %}
